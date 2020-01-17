@@ -5,7 +5,8 @@ import 'package:sayitahmin_flutter/constant.dart';
 class TextboxGuess extends StatelessWidget {
   final bool bittimi;
   final TextEditingController guessTextEdit;
-  TextboxGuess({this.bittimi,this.guessTextEdit});
+
+  TextboxGuess({this.bittimi, this.guessTextEdit});
 
   @override
   Widget build(BuildContext context) {
@@ -13,26 +14,24 @@ class TextboxGuess extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: bittimi
           ? Text(
-        "",
-        style: textStyle,
-      )
+              "",
+              style: textStyle,
+            )
           : TextField(
-          style: textStyle,
-          textAlign: TextAlign.center,
-          decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
-                  borderRadius: BorderRadius.circular(30.0)),
-              border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
-                  borderRadius: BorderRadius.circular(30.0)),
-              hintText: 'Bir sayı gir',
-              hintStyle: hintStyle),
-          keyboardType: TextInputType.number,
-          inputFormatters: [
-            WhitelistingTextInputFormatter.digitsOnly
-          ],
-          controller: guessTextEdit),
+              style: textStyle,
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                      borderRadius: BorderRadius.circular(30.0)),
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                      borderRadius: BorderRadius.circular(30.0)),
+                  hintText: 'Bir sayı gir',
+                  hintStyle: hintStyle),
+              keyboardType: TextInputType.number,
+              inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],
+              controller: guessTextEdit),
     );
   }
 }
